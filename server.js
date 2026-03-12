@@ -68,7 +68,7 @@ app.get("/api/health", (req, res) => {
 app.use(express.static(join(__dirname, "dist")));
 
 // SPA fallback — any non-API route serves index.html
-app.get("*", (req, res) => {
+app.get("/{*splat}", (req, res) => {
   res.sendFile(join(__dirname, "dist", "index.html"));
 });
 
